@@ -1,0 +1,78 @@
+
+<div class="container">
+      @{  
+        if(ViewBag.Count > 0){
+          foreach(var error in ViewBag.Errors){
+            if(@error.Errors.Count > 0){
+              <p>@error.Errors[0].ErrorMessage</p>
+            }
+          }
+        }
+      }
+    <div class="row">
+    <h2>Review</h2>
+    <table width="100%" border="0">
+      <div class="col-md-9 col-md-offset-0">
+        <tr><td width="77%">
+        <div class="">
+          <form class="form-horizontal" asp-action="Register" asp-controller="Reviews" method="POST">
+          <fieldset>
+    
+            <!-- Name input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="name">Reviewer's Name</label>
+              <div class="col-md-9">
+                <input id="name" name="ReviewerName" type="text" placeholder="Reviewer's name'" class="form-control">
+              </div>
+            </div>
+    
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="email">Restaurant Name</label>
+              <div class="col-md-9">
+                <input id="restaurant" name="RestaurantName" type="text" placeholder="Restaurant" class="form-control">
+              </div>
+            </div>
+    
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="message">Review</label>
+              <div class="col-md-9">
+                <textarea class="form-control" id="ReviewContent" name="ReviewContent" placeholder="Please enter your feedback here..." rows="5"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="DateOfVisit">Date of Visit</label>
+              <div class="col-md-9">
+                <input type="Date" class="form-control" name="DateOfVisit">
+              </div>
+            </div>
+
+            <!-- Rating -->
+            <div class="form-group">
+              <label for="sel1">Give a Rating:</label>
+              <select class="form-control" id="sel1" name="Stars">
+                <option value=1 >1</option>
+                <option value=2 >2</option>
+                <option value=3 >3</option>
+                <option value=4 >4</option>
+                <option value=5 >5</option>
+              </select>
+            </div>
+    </td>
+    <td align="center" valign="top" width="23%">
+            <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                <button type="reset" class="btn btn-default btn-md">Clear</button>
+              </div>
+            </div>
+          </fieldset>
+          </form>
+        </div>
+    </div>
+    </td>
+    </tr>
+    </table>
+</div>
+

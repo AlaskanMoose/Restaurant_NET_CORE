@@ -1,0 +1,29 @@
+@using restaurant.Models
+@model restaurant.Models.Review
+
+<div>
+    <div class="row">
+        <div class="eight columns">
+            <h2>Reviews</h2>
+            <a href="/">Go Back</a>
+        </div>
+    </div>
+    <div class="row">
+
+    </div>
+    @foreach(var review in @ViewBag.Reviews)
+    {
+        <div>
+          <div class="row">
+              <div class="row">
+                  <div class="one column"></div>
+                  <div class="eleven columns">
+                      <h4>@review.ReviewerName @review.RestaurantName - @review.DateOfVisit.ToString("MMMM dd, yyyy")</h4>
+                      <p>@review.ReviewContent</p>
+                      <p>Ratings: @review.Stars</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+    }
+</div>
